@@ -11,30 +11,34 @@
 		<title>memo</title>
 	</head>
 	<body>
-		<h1>Remind Me!</h1>
+		
+		<div>
+			<h1>Remind Me!</h1>
+			<button id="back">back</button>
+		</div>
 
-		<div id="main">
-			<div id="left">
-				<div style="display: none;">
-					<button id="memobutton">Memos</button>
-				</div>
-				<div id="memoarea" style="display: block;">
+		<div id="buttons">
+			<div id="memobutton" style="display: block;">
+				<button class="button"><img src="memo.png"></br></br>Memos</button>
+			</div>
+			
+			<div id="addbutton" style="display: block;">
+				<button class="button"><img src="add.png"></br></br>Add</button>
+			</div>
+		</div>
+
+		<div id="area">
+			<div id="memoarea" style="display: none;">
 					<h2>To-Do List</h2>
 					<div id="memos"></div>
-				</div>
 			</div>
 
-			<div id="right">
-					<div style="display: none;">
-						<button id="inputbutton">Add</button>
-					</div>
-					<div id="inputarea" style="display: block;">
-						<div class="input">when <input type="text" id="when"></div>
-					    <div class="input">what <input type="text" id="what"></div>
-					    <div class="input">where <input type="text" id="where"></div>
-					    <button id="save">save</button>
-					</div>
-				</div>
+			<div id="inputarea" style="display: none;">
+				<div class="input">when <input type="text" id="when"></div>
+				<div class="input">what <input type="text" id="what"></div>
+				<div class="input">where <input type="text" id="where"></div>
+				<button id="save">save</button>
+			</div>
 		</div>
 	</body>
 </html>
