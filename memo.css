@@ -1,34 +1,56 @@
 /* Homework 11 (memo.css), by Xuanlei Ren
    CSc 337, Spring 2019 
    Purpose: this is a css file for html use. */
-#main {
+#buttons, #area {
 	display: flex;
 }
 
 h1, h2 {
-	font-size: 30px;
+	font-size: 50px;
 	text-align: center;
 }
 
-
-#main>div {
-	width: 50%;
+h2 {
+	font-size: 30px;
 }
 
-#memobutton, #inputbutton{
-	padding-left: auto;
-	padding-right: auto;
+#back {
+	margin-left: 1300px;
 }
-#memos {
+
+#memobutton, #addbutton{
+	height: 800px;
+	padding-top: 100px;
+}
+
+#memobutton {
+	padding-left: 450px;
+}
+
+#addbutton {
+	padding-left: 120px;
+}
+
+.button{
+	font-size: 15px;
+	width: 200px;
+	height: 200px;
+	border-radius: 30px;
+}
+
+#memoarea{
 	margin-left: auto;
 	margin-right: auto;
-	width: 500px;
-	height: 600px;
-	border: 2px solid black;
 }
 
-#right {
-	padding: 10px;
+#memos {
+	width: 500px;
+	height: 550px;
+	border: 2px solid black;
+}
+#inputarea {
+	margin-left: 600px;
+	padding-top: 150px;
 }
 
 .input {
@@ -42,4 +64,9 @@ p {
 
 #hint {
 	color: grey;
+}
+
+#save {
+	margin-left: 5px;
+	margin-top: 30px;
 }
