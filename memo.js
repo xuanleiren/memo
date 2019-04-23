@@ -7,18 +7,41 @@
 (function() { 
 
     window.onload = function() {
-    	loading();
-    	setInterval(loading, 5000);
-    	document.getElementById("save").addEventListener('click', save);
+    	mainpage();
+    	document.getElementById("memobutton").addEventListener('click', memo);
+   		document.getElementById("addbutton").addEventListener('click', add);
+    	document.getElementById("back").addEventListener('click', mainpage);
     };
 
+    function mainpage(){
+    	document.getElementById("memobutton").style.display = "block";
+    	document.getElementById("addbutton").style.display = "block";
+    	document.getElementById("memoarea").style.display = "none";
+    	document.getElementById("inputarea").style.display = "none";
+    }
+
+    function memo(){
+    	document.getElementById("memobutton").style.display = "none";
+    	document.getElementById("addbutton").style.display = "none";
+    	document.getElementById("memoarea").style.display = "block";
+    	document.getElementById("inputarea").style.display = "none";
+    	update();
+    }
+
+    function add(){
+    	document.getElementById("memobutton").style.display = "none";
+    	document.getElementById("addbutton").style.display = "none";
+    	document.getElementById("memoarea").style.display = "none";
+    	document.getElementById("inputarea").style.display = "block";
+    	document.getElementById("save").addEventListener('click', save);
+    }
     /**
  	 * function that send memo to web service.
   	 * @param {} none
  	 * @returns {} none.
  	 */
     function save(){
-    	let url = "http://localhost:3000/"; 
+    	let url = "http://remindmeplz.herokuapp.com/"; 
     	let when = document.getElementById("when").value;
     	let what = document.getElementById("what").value;
     	let where = document.getElementById("where").value;
@@ -36,10 +59,10 @@
 		fetch(url, fetchOptions)
 			.then(checkStatus)
 			.then(function() {	
-				alert("Memo sent successfully");
+				alert("Memo saved successfully");
 			})
 			.catch(function(error) {
-				alert("Memo didn't sent");
+				alert("Memo didn't save");
 				console.log(error);
 			});
     }
@@ -49,9 +72,9 @@
   	 * @param {} none
  	 * @returns {} none.
  	 */
-    function loading(){
+    function update(){
     	document.getElementById("memos").innerHTML = "";
-    	let url = "http://localhost:3000/";
+    	let url = "http://remindmeplz.herokuapp.com/";
     	fetch(url)
 			.then(checkStatus)
 			.then(function(responseText) {
